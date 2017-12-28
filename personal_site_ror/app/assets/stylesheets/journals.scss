@@ -1,0 +1,25 @@
+// Place all the styles related to the journals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 0.5px;
+  color: black;
+}
+
+.sidenav {
+  height: 100%;
+}
+
+.affix {
+    z-index: 9999 !important;
+}
+
+.row.content {height: 1500px}

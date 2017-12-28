@@ -1,0 +1,36 @@
+<% stylesheet_link_tag "journals.scss" %>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-xs-3">
+
+      <ul class="nav" data-spy="affix" data-offset-top="1">
+        </br>
+        </br>
+        </br>
+        <li> <h4>Journals</h4> </li>
+        <li> <%= link_to 'New entry', new_journal_path %></li>
+        <li> <%= link_to 'Home', controller: 'welcome' %></li>
+      </ul><br>
+    </div>
+      <div class="col-xs-9">
+      <% @posts.each do |post| %>
+          <h2><%= link_to post.title , journal_path(post) %></h2>
+          <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
+          <p><%= raw(post.body).truncate(128) %></p>
+          <p><%= raw(post.body).split.size %> Words. </p>
+        </br>
+        <%= link_to "Edit", controller: "journals", action: "edit", id: post.id %>
+        <%= link_to "Delete", journal_path(post),  method: :delete, data: {confirm: "Are you sure?"}  %>
+        <hr>
+        <%end%>
+      </div>
+
+
+
+
+
+    </div>
+
+
+  </div>

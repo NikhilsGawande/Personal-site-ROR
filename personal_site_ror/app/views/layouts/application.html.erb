@@ -1,0 +1,28 @@
+
+<html>
+
+  <head>
+    <title>PersonalSiteRor</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="nav" >
+      <ul class='nav'>
+        <li class='nav-item'><%= link_to 'My entries', {controller: 'journals'}, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'New entry', new_journal_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'My articles', {controller: 'articles'}, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'New article', new_article_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'Todos', {controller: 'todos'}, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'New todo', new_todo_path, class: 'nav-link' %></li>
+
+
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

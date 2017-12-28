@@ -1,0 +1,57 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <strong><th>Urgent</th></strong>
+      <strong><th>Not Urgent</th></strong>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <strong><th>important</th></strong>
+      <td>
+         <% @todos.each do |todo| %>
+          <% if todo.category == 1 and todo.done == false %>
+          <%= link_to todo.title, edit_todo_path(todo) %>(
+          <%= link_to 'done', controller: 'todos', action: 'done' , id: todo.id%>
+          <%= link_to 'Delete ' ,todo_path(todo) , method: :delete, data: {confirm: 'Are you sure?'} %>)
+          </br>
+          <%end%>
+          <%end%>
+      </td>
+      <td>
+        <% @todos.each do |todo| %>
+         <% if todo.category == 2 and todo.done == false %>
+         <%= link_to todo.title, edit_todo_path(todo) %> (<%= link_to 'done', controller: 'todos', action: 'done' , id: todo.id%>
+<%= link_to 'Delete ' ,todo_path(todo) , method: :delete, data: {confirm: 'Are you sure?'} %>)
+         </br>
+         <%end%>
+         <%end%>
+
+      </td>
+    </tr>
+    <tr>
+      <strong><th>Not important</th></strong>
+      <td>
+        <% @todos.each do |todo| %>
+         <% if todo.category == 3 and todo.done == false %>
+         </br>
+         <%= link_to todo.title, edit_todo_path(todo) %> (<%= link_to 'done', controller: 'todos', action: 'done' , id: todo.id%>
+<%= link_to 'Delete ' ,todo_path(todo) , method: :delete, data: {confirm: 'Are you sure?'} %>)
+         <%end%>
+         <%end%>
+      </td>
+      <td>
+        <% @todos.each do |todo| %>
+         <% if todo.category == 4 and todo.done == false %>
+         <%= link_to todo.title, edit_todo_path(todo) %>(<%= link_to 'done', controller: 'todos', action: 'done' , id: todo.id%>
+<%= link_to 'Delete ' ,todo_path(todo) , method: :delete, data: {confirm: 'Are you sure?'} %>)
+         </br>
+         <%end%>
+         <%end%>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</table>
